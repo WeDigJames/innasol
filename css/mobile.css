@@ -1,0 +1,313 @@
+@media all and (max-width:1400px) {
+
+    .whatWeDoPage .page .square-bottom-right {
+        left: 75%;
+    }
+
+}
+
+@media all and (max-width:1290px) {
+	
+    #myHeader .container, .pageHeader .container, .page-template-partners .container {
+        width: 96%;
+    }
+	
+	.whatWeDoSubPage .eta .etaContent{
+		padding-left:2%;
+	}
+	
+	.whoWeArePage .becomePartnerMap .content {
+    padding: 180px 0 0 2%;
+	}
+
+    .swiper .swiper-content .content {
+        left: 2%;
+    }
+
+    .mainNav .logo {
+        width: 225px;
+    }
+}
+
+@media all and (max-width:1279px) {
+
+    #mapsSearchWrap .wpgmza_marker_carousel .item .wpgmza_marker_title {
+        font-size: 14px;
+    }
+
+}
+
+@media all and (min-width:1169px) and (max-width:1289px) {
+    #menu-main-menu > li:last-child {
+        margin-left: 63px;
+    }
+    .mainNav ul li {
+        font-size: 14px;
+    }
+}
+@media all and (max-width:1025px) {
+
+    #menu-main-menu > li:last-child {
+        margin-left: 45px;
+    }
+ 
+    .btn.btnGreen .text {
+        font-size: 11px;
+        padding: 15px 22px 14px 20px;
+    }
+
+    .mainNav .navToggle.close {
+        background: url('../images/mobile-nav-close.png') no-repeat;
+        top: 15px;
+        z-index: 10;
+        right: 15px;
+    }
+
+    .genericPromos .promo .btnText {
+        bottom: 0;
+    }
+
+    .genericPromos .promo.promo2 {
+        top: 670px
+    }
+
+    .genericPromos {
+        height: 1330px;
+    }
+
+}
+
+@media all and (max-width:800px) {
+
+    .container {
+        padding: 0 0 !important;
+        width: 90%;
+    }
+
+
+
+    .home-whatWeDo {
+        height: auto;
+        padding: 20px 0 20px;
+    }
+
+
+
+    .whatWeDoSubPage .eta .etaContent .etaLogo {
+        margin-right: -200px;
+    }
+
+    .genericPromos .promo h3 .text {
+        padding: 13px 20px 12px 20px;
+        font-size: 18px;
+    }
+
+    .whatWeDoRange .productsList .productItem .btnText {
+        top: 275px;
+    }
+
+    .caseStudies .caseStudy.caseStudy1 {
+        float: left;
+    }
+
+    .caseStudies {
+        height: auto;
+        padding: 50px 0;
+    }
+
+    .footer .footerLinks ul li a {
+        font-size: 12px;
+    }
+
+    .footer .copyright p {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .whoWeArePage .becomePartnerMap .square-left,
+    .becomeAPartner .becomePartnerMap .square-left,
+    .contactUsPage .map .square-left {
+        left: 75%;
+    }
+
+    .caseStudies .caseStudyGroup {
+        padding: 0;
+    }
+
+    .blogPage .posts .postContent .allPosts {
+        margin-left: 0;
+    }
+
+    .blogSinglePost .postContent {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mainNav .navToggle {
+        right: 0px;
+    }
+
+}
+
+@media all and (max-width:600px) {
+
+    .swiper .swiper-content .content h1 {
+        font-size: 32px;
+    }
+	
+	.blogSinglePost .pageHeader .titles h2{
+	font-size: 38px;
+}
+
+    .home-whatWeDo .promos .promo h4.promos-title {
+        font-size: 17px;
+    }
+
+    .genericPromos .promos .promo.latestNews {
+        margin-bottom: 0;
+    }
+
+    .caseStudies .caseStudy .btn {
+        font-size: 16px;
+    }
+
+    .home-paidForGreen .content h2 {
+        font-size: 26px;
+    }
+
+    .home-paidForGreen {
+        height: auto;
+        padding: 50px 0;
+    }
+
+    .genericPromos .promos .promo.form {
+        float: left;
+        left: 0;
+        margin-left: 0;
+        margin-bottom: 40px;
+        padding-bottom: 15px;
+        position: relative;
+        top: auto;
+        width: 100%;
+    }
+
+    .home-whatWeDo .promos .promo.findPartner {
+        height: auto;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        margin: 0 0 50px 0;
+    }
+
+    .genericPromos .promos .promo div.btn {
+        font-size: 14px;
+    }
+
+    .genericPromos .promos .promo h3 .text {
+        padding-bottom: 4px;
+        padding-top: 10px;
+    }
+
+    .footer .copyright p {
+        font-size: 10px;
+        text-align: center;
+        margin-top: 22px;
+    }
+
+    .footer {
+        height: auto;
+        padding-bottom: 120px;
+    }
+
+    .genericPromos .promos .promo {
+        padding-bottom: 100px;
+    }
+
+    .whatWeDoPage .productList .product .imageWrap .titles {
+        top: 50px;
+    }
+
+    .footer .footerLinks ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .whatWeDoPage .productList .product .imageWrap h3,
+    .whatWeDoPage .productList .product .imageWrap h4 {
+        font-size: 14px;
+    }
+
+    .footer .footerLinks ul {
+        margin-top: 70px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .becomePartnerMap-h2 {
+        font-size: 20px;
+    }
+
+    .whoWeArePage .becomePartnerMap .content p {
+        color: #fff;
+        font-size: 17px;
+    }
+
+    #mapsSearchWrap .wpgmza_sl_radius_div,
+    #mapsSearchWrap .wpgmza_sl_query_div {
+        width: 100%;
+    }
+
+    .whatWeDoPage .specialistTraining .content p,
+    .becomeAPartner .becomePartnerMap .content p {
+        font-size: 14px;
+    }
+
+    .whatWeDoSubPage .eta {
+        display: none;
+    }
+
+    .whatWeDoRange .productsList .productItem .btnText {
+        top: 119px;
+    }
+
+    .becomeAPartner .sidebar .training .btnText {
+        bottom: 165px;
+    }
+
+    .owl-carousel {
+        padding: 50px 0 !important;
+    }
+
+    .wpgmza_markerbox p {
+        font-size: 12px;
+    }
+
+    .gm-style .gm-style-iw-c {
+        max-width: 100%;
+        max-height: 250px;
+        padding: 10px;
+    }
+
+    .blogPage .posts .postContent .allPosts .post .line {
+        display: none;
+    }
+
+    .pagination .showing {
+        margin: 0;
+    }
+
+    .owl-theme .owl-controls .owl-buttons div.owl-next,
+    .owl-theme .owl-controls .owl-buttons div.owl-prev {
+        top: 30px;
+    }
+
+    #mapsSearchWrap .wpgmza_sl_radius_innerdiv2,
+    #mapsSearchWrap .wpgmza_sl_query_innerdiv2 {
+        float: none;
+        padding: 0;
+        width: 100%;
+    }
+
+}
