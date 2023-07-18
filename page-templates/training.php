@@ -1,7 +1,8 @@
 <?php /* Template Name: Training */ get_header();?>
 
 <div class="specialistTrainingPage">
-    <div class="pageHeader" style="background-image: url(<?php the_field('banner_footer_image');?>)">
+    <div class="pageHeader" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
+    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')">
         <div class="container">
             <div class="t-heading--xlarge t-heading--white c-legend__title"><?php the_title();?></div>
             <div class="shard">

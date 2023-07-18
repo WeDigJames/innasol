@@ -1,5 +1,8 @@
-<?php if (is_page(array(2, 16, 18, 20, 22, 7530, 7526, 7528, 7532)) || is_single()) {; ?>
-    <div class="divider" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/header_homepage_forest_1.jpg')">
+<?php if (is_page(array(2, 16, 18, 20, 22, 7530, 7526, 7528, 7532)) || is_single()) {; 
+    $bg_image = get_field('banner_footer_image', 'option');
+    $size = 'slider'; 
+    ?>
+    <div class="divider" style="background-image: url('<?php echo wp_get_attachment_image_url( $bg_image, $size ); ?>')">
         <div class="shard"></div>
         <div class="square square-left"></div>
         <div class="square square-right"></div>
@@ -20,7 +23,7 @@
                         $i++; ?>
                         <div class="swiper-slide slide<?php echo $i; ?>">
                             <a href="<?php echo get_permalink(); ?>" target="_self" class="caseStudy caseStudy1">
-                                <div class="image"> <img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                                <div class="image"> <img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'square-ish');
                                                                 echo $featured_img_url; ?>" height="240" width="280" title="Commercial Biomass" alt="Commercial Biomass" data-mask="caseStudySlidePromo" class="promoMask" />
                                     <div class="greenBar"></div>
                                     <div class="btn"> <span class="title"><?php the_title(); ?></span></div>
@@ -37,8 +40,9 @@
         <div class="square square-bottom-right"></div>
     </div>
 <?php }; ?>
-<div class="footer" style="background-image: url('<?php if (get_field('banner_footer_image')) {; ?><?php the_field('banner_footer_image'); ?><?php } else {; ?><?php $thumb_id = get_post_thumbnail_id();
-                                                                                                                                                                $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
+<div class="footer" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
+    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); ?><?php } else {; ?><?php $thumb_id = get_post_thumbnail_id();
+                                                                                                                                                                $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'slider', true);
                                                                                                                                                                 $thumb_url = $thumb_url_array[0];
                                                                                                                                                                 echo $thumb_url; ?><?php }; ?>')">
     <div class="container">

@@ -1,7 +1,8 @@
 <?php /* Template Name: News */ get_header();?>
 
 <div class="blogPage">
-    <div class="pageHeader" style="background-image: url(<?php the_field('banner_footer_image');?>)">
+    <div class="pageHeader" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
+    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')">
         <div class="container">
             <div class="t-heading--xlarge t-heading--white c-legend__title"><?php the_title();?></div>
             <div class="shard">
@@ -30,7 +31,7 @@
                 <div class="allPosts">
                     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <div class="post">
-                        <a href="<?php echo get_permalink();?>" class="image" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id(); $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true); $thumb_url = $thumb_url_array[0]; echo $thumb_url; ?>);"></a>
+                        <a href="<?php echo get_permalink();?>" class="image" style="background-image: url(<?php $thumb_id = get_post_thumbnail_id(); $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'square', true); $thumb_url = $thumb_url_array[0]; echo $thumb_url; ?>);"></a>
                         <div class="postContent">
                             <div class="line lineTop"></div>
                             <h3><a class="" href="<?php echo get_permalink();?>"><?php the_title();?></a></h3>

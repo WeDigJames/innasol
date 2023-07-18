@@ -1,7 +1,8 @@
 <?php /* Template Name: Who we are */ get_header();?>
 
 <div class="whoWeArePage">
-    <div class="pageHeader" style="background-image: url(<?php the_field('banner_footer_image');?>)">
+    <div class="pageHeader" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
+    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')">
         <div class="container">
             <div class="t-heading--xlarge t-heading--white c-legend__title"><?php the_title();?></div>
             <div class="shard">
@@ -38,7 +39,8 @@
         <div class="square square-bottom-left"></div>
         <div class="square square-bottom-right"></div>
     </div>
-    <div class="becomePartnerMap" style="background-image: url(<?php echo get_template_directory_uri();?>/images/header_section_who_we_are.jpg)">
+    <div class="becomePartnerMap" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
+    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')">
         <div class="mapWrap">
             <?php echo do_shortcode('[wpgmza id="13"]'); ?>
         </div>

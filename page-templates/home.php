@@ -180,7 +180,7 @@
                                                 <?php if( get_sub_field('image') ): 
                                                     $image = get_sub_field('image');
                                                         // ACF IMAGE (ID) - MAKE SURE FIELD IS SET TO 'Image ID'
-                                                        $image_size = 'large';
+                                                        $image_size = 'six-four';
                                                         $image_src = wp_get_attachment_image_src( $image, $image_size );
                                                         $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
                                                         $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
@@ -218,7 +218,7 @@
         <?php if( get_sub_field('image') ): 
             $image = get_sub_field('image');
                 // ACF IMAGE (ID) - MAKE SURE FIELD IS SET TO 'Image ID'
-                $image_size = 'full-width';
+                $image_size = 'slider';
                 $image_src = wp_get_attachment_image_src( $image, $image_size );
                 $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
                 $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
@@ -328,7 +328,7 @@
                                                 <?php if( get_sub_field('image') ): 
                                                     $image = get_sub_field('image');
                                                         // ACF IMAGE (ID) - MAKE SURE FIELD IS SET TO 'Image ID'
-                                                        $image_size = 'large';
+                                                        $image_size = 'six-four';
                                                         $image_src = wp_get_attachment_image_src( $image, $image_size );
                                                         $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
                                                         $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
@@ -445,7 +445,7 @@
         <?php if( get_sub_field('image') ): 
             $image = get_sub_field('image');
                 // ACF IMAGE (ID) - MAKE SURE FIELD IS SET TO 'Image ID'
-                $image_size = 'full-width';
+                $image_size = 'slider';
                 $image_src = wp_get_attachment_image_src( $image, $image_size );
                 $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
                 $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
@@ -554,7 +554,7 @@
                                                 <?php if( get_sub_field('image') ): 
                                                     $image = get_sub_field('image');
                                                         // ACF IMAGE (ID) - MAKE SURE FIELD IS SET TO 'Image ID'
-                                                        $image_size = 'large';
+                                                        $image_size = 'six-four';
                                                         $image_src = wp_get_attachment_image_src( $image, $image_size );
                                                         $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
                                                         $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
@@ -596,7 +596,7 @@
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
             <div class="tableCell first">
                 <a href="<?php echo get_permalink();?>" class="promo promo1 latestNews">
-                    <img src="<?php $thumb_id = get_post_thumbnail_id(); $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true); $thumb_url = $thumb_url_array[0]; echo $thumb_url; ?>" height="240" width="400" title="What's Happening" alt="What's Happening" class="promoMask" />
+                    <img src="<?php $thumb_id = get_post_thumbnail_id(); $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'six-four', true); $thumb_url = $thumb_url_array[0]; echo $thumb_url; ?>" height="240" width="400" title="What's Happening" alt="What's Happening" class="promoMask" />
                     <h3 class="lightGreen"> <span class="text">What's Happening</span> <span class="shard"></span></h3>
                     <div class="btn"><?php the_title();?></div>
                     <p class="date"><?php echo get_the_date();?></p>

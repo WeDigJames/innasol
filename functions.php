@@ -358,3 +358,20 @@ function auto_redirect_after_logout(){
 wp_redirect( home_url() );
 exit();
 }
+
+//Nutcracker added functions by James Maiden 2023
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title'    => 'Sitewide Settings',
+        'menu_title'    => 'Sitewide Settings',
+        'menu_slug'     => 'sitewide-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+}
+
+add_image_size( 'sliders', 1680, 920, true ); 
+add_image_size( 'six-four', 600, 400, true ); 
+add_image_size( 'square-ish', 560, 480, true ); 
+add_image_size( 'square', 380, 380, true );

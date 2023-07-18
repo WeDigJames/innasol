@@ -1,7 +1,8 @@
 <?php /* Template Name: Product - ETA */ get_header();?>
 
 <div class="whatWeDoSubPage">
-    <div class="pageHeader" style="background-image: url(<?php the_field('banner_footer_image');?>)">
+    <div class="pageHeader" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
+    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')">
         <div class="container">
             <div class="t-heading--xlarge t-heading--white c-legend__title"><?php the_title();?></div>
             <div class="shard">
@@ -51,7 +52,7 @@
                 <div class="productItem">
                     <h3><strong><?php the_title();?></strong> <?php the_field('power');?></h3>
                     <div class="image">
-                        <img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); echo $featured_img_url; ?>" height="320" width="400" title="<?php the_title();?>" alt="<?php the_title();?>" data-mask="whatWeDoRangeProduct" data-product="true" class="promoMask" />
+                        <img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'six-four'); echo $featured_img_url; ?>" height="320" width="400" title="<?php the_title();?>" alt="<?php the_title();?>" data-mask="whatWeDoRangeProduct" data-product="true" class="promoMask" />
                         <a href="<?php the_field('pdf');?>" target="_blank" class="btnText btnTextGreen">Product Brochure</a></div>
                     <div class="content">
                         <div class="contentSide">
@@ -79,7 +80,7 @@
             <?php $i = 0; $post_objects = get_field('also_interested_in'); if( $post_objects ): ?>
             <?php foreach( $post_objects as $post): $i++;  ?>
             <?php setup_postdata($post); ?>
-            <a href="<?php echo get_permalink();?>" class="promo promo<?php echo $i;?>"><img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); echo $featured_img_url; ?>" height="280" width="673" title="<?php the_title();?>" alt="<?php the_title();?>" data-mask="whatWeDoSubpageAlsoLike" class="promoMask" />
+            <a href="<?php echo get_permalink();?>" class="promo promo<?php echo $i;?>"><img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'six-four'); echo $featured_img_url; ?>" height="280" width="673" title="<?php the_title();?>" alt="<?php the_title();?>" data-mask="whatWeDoSubpageAlsoLike" class="promoMask" />
                 <h3><?php the_title();?></h3>
                 <div class="btnText btnTextGreen">Find out more</div>
             </a>

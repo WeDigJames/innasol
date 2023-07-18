@@ -1,7 +1,8 @@
 <?php /* Template Name: Product - Sokratherm */ get_header();?>
 
 <div class="whatWeDoSubPage">
-    <div class="pageHeader" style="background-image: url(<?php the_field('banner_footer_image');?>)">
+    <div class="pageHeader" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
+    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')">
         <div class="container">
             <div class="t-heading--xlarge t-heading--white c-legend__title"><?php the_title();?></div>
             <div class="shard">
@@ -36,7 +37,8 @@
         <div class="square square-bottom-right"></div>
     </div>
     <div class="whatWeDoRange">
-        <div class="divider" style="background-image: url(<?php echo get_template_directory_uri();?>/images/Sokratherm-Manufacturing-plant-1000x476.jpg)">
+        <div class="divider" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
+    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')">
             <div class="shard">
                 <div class="angle"></div>
                 <div class="square square-right"></div>
@@ -79,7 +81,7 @@
             <?php $i = 0; $post_objects = get_field('also_interested_in'); if( $post_objects ): ?>
             <?php foreach( $post_objects as $post): $i++;  ?>
             <?php setup_postdata($post); ?>
-            <a href="<?php echo get_permalink();?>" class="promo promo<?php echo $i;?>"><img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); echo $featured_img_url; ?>" height="280" width="673" title="<?php the_title();?>" alt="<?php the_title();?>" data-mask="whatWeDoSubpageAlsoLike" class="promoMask" />
+            <a href="<?php echo get_permalink();?>" class="promo promo<?php echo $i;?>"><img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'six-four'); echo $featured_img_url; ?>" height="280" width="673" title="<?php the_title();?>" alt="<?php the_title();?>" data-mask="whatWeDoSubpageAlsoLike" class="promoMask" />
                 <h3><?php the_title();?></h3>
                 <div class="btnText btnTextGreen">Find out more</div>
             </a>
