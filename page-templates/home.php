@@ -1,18 +1,21 @@
 <?php /* Template Name: Home */ get_header();?>
 
+<?php
+    $slide_image_1 = get_field('slide_image_-_1');
+    $slide_image_2 = get_field('slide_image_-_2');
+    $slide_image_3 = get_field('slide_image_-_3');
+    $slide_image_4 = get_field('slide_image_-_4');
+    $slide_image_5 = get_field('slide_image_-_5');
+?>
+
 <div class="swiper">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url('<?php if (get_field('slide_image_-_1')) {; $bg_image = get_field('slide_image_-_1');
-    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')"></div>
-            <div class="swiper-slide" style="background-image: url('<?php if (get_field('slide_image_-_2')) {; $bg_image = get_field('slide_image_-_2');
-    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')"></div>
-            <div class="swiper-slide" style="background-image: url('<?php if (get_field('slide_image_-_3')) {; $bg_image = get_field('slide_image_-_3');
-    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')"></div>
-            <div class="swiper-slide" style="background-image: url('<?php if (get_field('slide_image_-_4')) {; $bg_image = get_field('slide_image_-_4');
-    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')"></div>
-            <div class="swiper-slide" style="background-image: url('<?php if (get_field('slide_image_-_5')) {; $bg_image = get_field('slide_image_-_5');
-    $size = 'slider'; ?><?php echo wp_get_attachment_image_url( $bg_image, $size ); }; ?>')"></div>
+            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_1['sizes']['slider']; ?>')"></div>
+            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_2['sizes']['slider']; ?>')"></div>
+            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_3['sizes']['slider']; ?>')"></div>
+            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_4['sizes']['slider']; ?>')"></div>
+            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_5['sizes']['slider']; ?>')"></div>
         </div>
         <div class="swiper-content">
             <div class="container">

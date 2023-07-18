@@ -371,7 +371,7 @@ if( function_exists('acf_add_options_page') ) {
     ));
 }
 
-add_image_size( 'sliders', 1680, 920, true ); 
+add_image_size( 'slider', 1680, 920, true ); 
 add_image_size( 'six-four', 600, 400, true ); 
 add_image_size( 'square-ish', 560, 480, true ); 
 add_image_size( 'square', 380, 380, true );
