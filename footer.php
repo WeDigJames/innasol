@@ -23,7 +23,7 @@
                         $i++; ?>
                         <div class="swiper-slide slide<?php echo $i; ?>">
                             <a href="<?php echo get_permalink(); ?>" target="_self" class="caseStudy caseStudy1">
-                                <div class="image"> <img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'square-ish');
+                                <div class="image no-lazy"> <img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'square-ish');
                                                                 echo $featured_img_url; ?>" height="240" width="280" title="Commercial Biomass" alt="Commercial Biomass" data-mask="caseStudySlidePromo" class="promoMask" />
                                     <div class="greenBar"></div>
                                     <div class="btn"> <span class="title"><?php the_title(); ?></span></div>

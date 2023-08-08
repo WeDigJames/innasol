@@ -1,4 +1,4 @@
-<?php /* Template Name: Product - PV */ get_header();?>
+<?php /* Template Name: Product - Idris */ get_header();?>
 
 <div class="whatWeDoSubPage">
     <div class="pageHeader" style="background-image: url('<?php if (get_field('banner_footer_image')) {; $bg_image = get_field('banner_footer_image');
@@ -12,16 +12,14 @@
             <div class="square square-top-right"></div>
         </div>
     </div>
-    <?php if (get_field('strapline')): ?>
-        <div class="eta " style="border-top-color: #f7b914;">
-            <div class="etaContent">
-                <p style="background-color: #f7b914; color: #ffffff"><?php the_field('strapline');?></p> <span class="etaLogo" style="border-top-color: #f7b914;"><img src="<?php echo get_template_directory_uri();?>/images/logo-eta.png" /></span>
-            </div>
+    <div class="eta " style="border-top-color: #283c0a;">
+        <div class="etaContent">
+            <p style="background-color: #283c0a; color: #ffffff"><?php the_field('strapline');?></p> <span class="etaLogo" style="border-top-color: #283c0a;"><img src="<?php echo get_template_directory_uri();?>/images/logo-innasol.png" /></span>
         </div>
-    <?php endif; ?>
-    <div class="page" <?php if (!get_field('strapline')):?>style="padding-top:0"<?php endif; ?>>
-        <div class="container"> 
-            <div class="postContent">
+    </div>
+    <div class="page">
+        <div class="container">
+            <div class="postContent"> 
                 <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<div class="breadcrumbs">','</div>' ); }?>
                 <div class="pageContent postStyles">
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -30,7 +28,7 @@
                 </div>
                 <div class="pageSidebar">
                     <div class="form">
-                        <?php echo do_shortcode( '[contact-form-7 id="10372" title="Contact Us - SolarPV"]' ); ?>
+                        <?php echo do_shortcode( '[contact-form-7 id="10442" title="Contact Us - IDRIS"]' ); ?>
                     </div>
                 </div>
             </div>
@@ -49,35 +47,38 @@
             <div class="square square-left"></div>
             <div class="square square-right"></div>
         </div>
+        <!-- 
         <div class="productsList">
             <div class="container">
-                <?php $loop = new WP_Query(array('post_type' => 'product','posts_per_page' => -1,'tax_query' => array(array ('taxonomy' => 'range','field' => 'slug','terms' => 'solar-pv',)),)); while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <?php //$loop = new WP_Query(array('post_type' => 'product','posts_per_page' => -1,'tax_query' => array(array ('taxonomy' => 'range','field' => 'slug','terms' => 'innosal-heat-pods',)),)); while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 <div class="productItem">
-                    <h3><strong><?php the_title();?></strong> <?php the_field('power');?></h3>
+                    <h3><strong><?php //the_title();?></strong> <?php //the_field('power');?></h3>
                     <div class="image">
-                        <img src="<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); echo $featured_img_url; ?>" height="320" width="400" title="<?php the_title();?>" alt="<?php the_title();?>" data-mask="whatWeDoRangeProduct" data-product="true" class="promoMask" />
-                        <a href="<?php the_field('pdf');?>" target="_blank" class="btnText btnTextGreen">Product Brochure</a></div>
+                        <img src="<?php //$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); echo $featured_img_url; ?>" height="320" width="400" title="<?php the_title();?>" alt="<?php the_title();?>" data-mask="whatWeDoRangeProduct" data-product="true" class="promoMask" />
+                        <a href="<?php //the_field('pdf');?>" target="_blank" class="btnText btnTextGreen">Product Brochure</a></div>
                     <div class="content">
                         <div class="contentSide">
                             <h4>Typical applications:</h4>
-                            <?php the_field('applications');?>
+                            <?php //the_field('applications');?>
                         </div>
                         <div class="contentSide">
                             <h4>Main Features:</h4>
-                            <?php the_content();?>
+                            <?php //the_content();?>
                         </div>
                         <div class="line"></div>
                     </div>
                 </div>
-                <?php endwhile; wp_reset_postdata();?>
+                <?php //endwhile; wp_reset_postdata();?>
             </div>
             <div class="square-right"></div>
             <div class="square-left"></div>
             <div class="square-bottom-left"></div>
         </div>
+        -->
     </div>
-    <div class="mayAlsoLike">
+    <div class="mayAlsoLike" style="padding: 115px 0 35px;">
         <div class="container">
+
             <h1>YOU MAY ALSO BE INTERESTED IN...</h1>
 
             <?php $i = 0; $post_objects = get_field('also_interested_in'); if( $post_objects ): ?>
@@ -90,6 +91,7 @@
             <?php endforeach; ?>
             <?php wp_reset_postdata(); ?>
             <?php endif; ?>
+
         </div>
         <div class="square square-left"></div>
         <div class="square square-right"></div>

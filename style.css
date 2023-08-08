@@ -3307,7 +3307,7 @@ a:hover {
 }
 
 .home-whatWeDo .promos .promo.findPartner .image {
-    background-image: url("images/tree-panel.jpg");
+    background-image: url("images/tree-panel.jpg.webp");
     background-position: center center;
     background-repeat: no-repeat;
     height: 96px;
@@ -7903,7 +7903,7 @@ a:hover {
     }
 
     .becomeAPartner .sidebar .training .btnText {
-        bottom: 21px;
+        bottom: 165px;
         padding-left: 15px;
     }
 
@@ -9594,13 +9594,22 @@ h2.caseStudyHeader {
     margin-bottom: 10px
 }
 
+@media screen and (max-width: 767px) {
+    .home .promos p.date {
+        margin-top: 0 !important;
+    }
+}
+
 @media screen and (max-width:1279px) {
     .container {
         width: 1024px;
     }
-
+    
     .promoMask {
         display: none;
+    }
+    .home img.promoMask {
+        display: block;
     }
 }
 
@@ -9613,11 +9622,18 @@ h2.caseStudyHeader {
     .promoMask {
         display: none;
     }
+
+    .home img.promoMask {
+        display: block;
+    }
 }
 
 @media screen and (max-width:768px) {
     .promoMask {
         display: none;
+    }
+    .home img.promoMask {
+        display: block;
     }
 }
 
@@ -13309,17 +13325,17 @@ img.h-100 {
 .home ul {
     padding-left: 1rem;
 }
-.panel {
+.panel, .card {
     padding:1.5rem;
     color: white
 }
-.panel.bgLightGreen {
+.panel.bgLightGreen, .card.bgLightGreen {
     background-color: #216000;
  
 }
 .panel.bgLightGreen li, .panel.bgGrey li, .panel.bgLightGreen h3, .panel.bgGrey h3 {
     color: white
 }
-.panel.bgGrey {
+.panel.bgGrey, .card.bgGrey  {
     background-color: #555;
 }

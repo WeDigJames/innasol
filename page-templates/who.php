@@ -21,18 +21,45 @@
                 <?php endwhile; endif; ?>
             </div>
             <div class="pageSidebar">
-                <div class="promo promo1"><a href="<?php echo site_url();?>/our-products/"><img src="<?php echo get_template_directory_uri();?>/images/promo_small_unequalled_products.jpg" height="240" width="480" title="Unequalled<br/>Products" alt="Unequalled<br/>Products" data-mask="whoWeArePromo" class="promoMask" />
-                        <h4>Unequalled<br />Products</h4>
-                        <div class="btnText btnTextGreen">Heating Systems</div>
-                    </a></div>
-                <div class="promo promo2"><a href="<?php echo site_url();?>/certified-partners/"><img src="<?php echo get_template_directory_uri();?>/images/promo_small_certified_partners.jpg" height="240" width="480" title="Certified<br/>Partners" alt="Certified<br/>Partners" data-mask="whoWeArePromo" class="promoMask" />
-                        <h4>Certified<br />Partners</h4>
-                        <div class="btnText btnTextGreen">Become a partner</div>
-                    </a></div>
-                <div class="promo promo3"><a href="<?php echo site_url();?>/our-offering/specialist-training/"><img src="<?php echo get_template_directory_uri();?>/images/promo_small_unrivalled_training.jpg" height="240" width="480" title="Unrivalled Training" alt="Unrivalled Training" data-mask="whoWeArePromo" class="promoMask" />
-                        <h4>Unrivalled<br />Training</h4>
-                        <div class="btnText btnTextGreen">Learn more</div>
-                    </a></div>
+
+                <?php if( have_rows('promo') ): ?>
+        
+                    <?php while( have_rows('promo') ): the_row(); 
+                        $image = get_sub_field('image');
+                            $image_size = 'promo';
+                            $image_src = wp_get_attachment_image_src( $image, $image_size );
+                            $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
+                            $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
+                            $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true);
+                        $title = get_sub_field('title');
+                        ?>
+                        <?php 
+                            $link = get_sub_field('link');
+                            //if( $link ): 
+                                $link_url = $link['url'];
+                                $link_title = $link['title'];
+                                $link_target = $link['target'] ? $link['target'] : '_self';
+                                ?>
+                                <?php //endif; ?>
+
+                        <div class="promo">
+                            <a class="" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">  
+                                <img data-mask="whoWeArePromo" 
+                                height="240" width="480" 
+                                class="promoMask" 
+                                    src="<?php echo esc_url( $image_src[0] ); ?>"
+                                    srcset="<?php echo esc_attr( $image_srcset ); ?>"
+                                    sizes="<?php echo esc_attr( $image_srcset_sizes ); ?>" 
+                                    alt="<?php echo $image_alt ?>"
+                                />
+                                <h4><?php echo $title ?></h4>
+                                <div class="btnText btnTextGreen"><?php echo esc_html( $link_title ); ?></div>
+                            </a>
+                        </div><!--.promo-->
+                    <?php endwhile; ?>
+
+                <?php endif; ?>
+
             </div>
         </div>
         <div class="square square-top-left"></div>

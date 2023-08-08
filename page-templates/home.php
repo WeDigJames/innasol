@@ -1,62 +1,62 @@
 <?php /* Template Name: Home */ get_header();?>
 
-<?php
-    $slide_image_1 = get_field('slide_image_-_1');
-    $slide_image_2 = get_field('slide_image_-_2');
-    $slide_image_3 = get_field('slide_image_-_3');
-    $slide_image_4 = get_field('slide_image_-_4');
-    $slide_image_5 = get_field('slide_image_-_5');
-?>
+<?php $rows = get_field('slides');
+    if( $rows ) : ?>
+                
+    <div class="swiper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <?php 
+                    $i = 0; 
+                    foreach( $rows as $row ) : 
+                        $image = $row['slide_image'] ; 
+                ?>
+                    <div class="swiper-slide" style="background-image: url('<?php echo $image['sizes']['slider']; ?>')"></div>
+                <?php 
+                    $i++; 
+                    endforeach; 
+                ?> 
+            </div>
+            <div class="swiper-content">
+                <div class="container">
+                    <?php 
+                    $i = 0;
+                        foreach( $rows as $row ): 
+                            $content = $row['slide_content'] ;
+                            $link_1 = $row['slide_link'] ;
+                            $link_2 = $row['slide_link_2'] ;
+                    ?>
 
-<div class="swiper">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_1['sizes']['slider']; ?>')"></div>
-            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_2['sizes']['slider']; ?>')"></div>
-            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_3['sizes']['slider']; ?>')"></div>
-            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_4['sizes']['slider']; ?>')"></div>
-            <div class="swiper-slide" style="background-image: url('<?php echo $slide_image_5['sizes']['slider']; ?>')"></div>
-        </div>
-        <div class="swiper-content">
-            <div class="container">
-                <div id="swiperContent0" class="content show">
-                    <?php the_field('slide_content_-_1');?>
-                    <a href="<?php the_field('slide_link_-_1');?>" class="btn btnTrans"> <span class="text">Learn More</span> </a>
-                    <a href="<?php the_field('slide_link_-_1b');?>" class="btn btnTrans" style="background: #fd912a;clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);color:#fff!important;"> <span class="text">FREE SURVEY</span> </a>
-                </div>
-                <div id="swiperContent1" class="content hide">
-                    <?php the_field('slide_content_-_2');?>
-                    <a href="<?php the_field('slide_link_-_2');?>" class="btn btnTrans"> <span class="text">Learn more</span> </a>
-                    <a href="<?php the_field('slide_link_-_1b');?>" class="btn btnTrans" style="background: #fd912a;clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);color:#fff!important;"> <span class="text">FREE SURVEY</span> </a>
-                </div>
-                <div id="swiperContent2" class="content hide">
-                    <?php the_field('slide_content_-_3');?>
-                    <a href="<?php the_field('slide_link_-_3');?>" class="btn btnTrans"> <span class="text">Learn more</span> </a>
-                    <a href="<?php the_field('slide_link_-_1b');?>" class="btn btnTrans" style="background: #fd912a;clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);color:#fff!important;"> <span class="text">FREE SURVEY</span> </a>
-                </div>
-                <div id="swiperContent3" class="content hide">
-                    <?php the_field('slide_content_-_4');?>
-                    <a href="<?php the_field('slide_link_-_4');?>" class="btn btnTrans"> <span class="text">Learn more</span> </a>
-                    <a href="<?php the_field('slide_link_-_1b');?>" class="btn btnTrans" style="background: #fd912a;clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);color:#fff!important;"> <span class="text">FREE SURVEY</span> </a>
-                </div>
-                <div id="swiperContent4" class="content hide">
-                    <?php the_field('slide_content_-_5');?>
-                    <a href="<?php the_field('slide_link_-_5');?>" class="btn btnTrans"> <span class="text">Learn more</span> </a>
-                    <a href="<?php the_field('slide_link_-_1b');?>" class="btn btnTrans" style="background: #fd912a;clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);color:#fff!important;"> <span class="text">FREE SURVEY</span> </a>
+                            <div id="swiperContent<?php echo $i;?>" class="content <?php if($i == 0) { echo 'show'; } else { echo 'hide'; } ?>">
+                                <?php echo $content ;?>
+                                <a href="<?php echo $link_1 ;?>" class="btn btnTrans"> <span class="text">Learn More</span> </a>
+                                <a href="<?php echo $link_2 ;?>" class="btn btnTrans" style="background: #fd912a;clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);color:#fff!important;"> <span class="text">FREE SURVEY</span> </a>
+                            </div>
+
+                    <?php 
+                        $i++; 
+                        endforeach; 
+                    ?> 
+                    
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-shard">
+                <div class="angle"></div>
+                <div class="square square-right"></div>
+            </div>
+            <div class="square swiper-square-left"></div>
+            <div class="square swiper-square-top-right"></div>
+            <div class="square swiper-square-center-right"></div>
+            <div class="square swiper-square-bottom-right"></div>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-shard">
-            <div class="angle"></div>
-            <div class="square square-right"></div>
-        </div>
-        <div class="square swiper-square-left"></div>
-        <div class="square swiper-square-top-right"></div>
-        <div class="square swiper-square-center-right"></div>
-        <div class="square swiper-square-bottom-right"></div>
     </div>
-</div>
+    
+
+    
+<?php endif; ?>
+
+
 <div class="home-whatWeDo" style="height: auto; padding: 100px 0;">
     <div class="container" style="margin-bottom: 60px;">
         <div class="table">
@@ -218,6 +218,93 @@
     </div>
 </div><!-- end .home-whatWeDo -->
 <!-- end BIOMASS SECTION -->
+
+
+<!-- IDRIS SECTION -->
+<div class="home-whatWeDo h-100">
+    <div class="container" style="margin-bottom: 60px;">
+        <div class="table">
+            <div class="tableCell first">
+                <div class="" style="padding: 0 40px;">
+                    <?php if( have_rows('idris_group') ): ?>
+                        <?php while( have_rows('idris_group') ): the_row(); ?>
+
+                                <?php if( have_rows('intro_content') ): ?>
+                                    <?php while( have_rows('intro_content') ): the_row(); 
+
+                                    $title = get_sub_field('title');
+                                    $text = get_sub_field('text');
+                                    $orange_link = get_sub_field('orange_button');
+                                    $grey_link = get_sub_field('grey_button');
+                                    ?>
+
+                                    <div class="grid-wrapper grid-two-cols mb-40">
+                                        <div class="forty d-flex flex-column h-100">
+                                            <h1 class="green"><?php echo $title;?></h1>
+                                            <div class="pr-40">
+                                                <p class="mt-0"><?php echo $text;?></p> 
+                                            </div>
+                                                        
+                                            <div class="h-100 mt-auto">
+                                                <?php 
+                                                    if( $orange_link ): 
+                                                        $link_url = $orange_link['url'];
+                                                        $link_title = $orange_link['title'];
+                                                        $link_target = $orange_link['target'] ? $orange_link['target'] : '_self';
+                                                        ?>
+                                                        <a class="btn btnTrans btnOrange" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="text"><?php echo esc_html( $link_title ); ?></span> <span class="shard"></span> </a>
+                                                    <?php endif; ?>
+                                                <?php 
+                                
+                                                    if( $grey_link ): 
+                                                        $link_url = $grey_link['url'];
+                                                        $link_title = $grey_link['title'];
+                                                        $link_target = $grey_link['target'] ? $grey_link['target'] : '_self';
+                                                        ?>
+                                                        <a class="btn btnGrey" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="text"><?php echo esc_html( $link_title ); ?></span> <span class="shard"></span> </a>
+                                                    <?php endif; ?>
+                                            </div>
+                                            
+                                            </div><!-- end .forty -->
+
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+
+                                            <div class="sixty">
+                                                <?php if( get_sub_field('image') ): 
+                                                    $image = get_sub_field('image');
+                                                        // ACF IMAGE (ID) - MAKE SURE FIELD IS SET TO 'Image ID'
+                                                        $image_size = 'six-four';
+                                                        $image_src = wp_get_attachment_image_src( $image, $image_size );
+                                                        $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
+                                                        $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
+                                                        $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true);
+                                                        //$image_caption = get_the_excerpt( $image );
+                                                ?>
+                                                    <img class="w-100 h-100" 
+                                                        src="<?php echo esc_url( $image_src[0] ); ?>"
+                                                        srcset="<?php echo esc_attr( $image_srcset ); ?>"
+                                                        sizes="<?php echo esc_attr( $image_srcset_sizes ); ?>" 
+                                                        alt="<?php echo $image_alt ?>"
+                                                    />
+                                                <?php endif; ?>
+                                            </div><!-- end .sixty -->
+
+                                    </div><!-- end .grid-wrapper -->
+
+                                    <?php if( get_sub_field('full_width_content') ):
+                                        the_sub_field('full_width_content');
+                                    endif; ?>
+                            
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- end .home-whatWeDo -->
+<!-- end IDRIS SECTION -->
+
 
 <!-- SOLAR SECTION -->
 <?php if( have_rows('solar_group') ): ?>
