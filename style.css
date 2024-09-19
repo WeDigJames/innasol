@@ -4,7 +4,7 @@ Author: Dragonfire Marketing
 Author URI: https://www.dragonfiremarketing.com/
 */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,600,700,900&display=swap');
 
 * {
     outline: none !important;
@@ -87,14 +87,14 @@ h1 {
 h2 {
     font-size: 26px;
     margin: 0 0 30px 0;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.2;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 21px;
     margin: 0 0 30px 0;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
 }
 
@@ -478,7 +478,6 @@ th {
 
 .btn.btnTrans {
     background: url("images/btn-trans.png") no-repeat right center;
-    border-left: 1px solid #fff;
     font-size: 18px;
     height: 45px;
     line-height: 15px;
@@ -489,7 +488,6 @@ th {
 .btn.btnTrans .text {
     background: url("images/icon-arrow-white.png") no-repeat right center;
     display: inline-block;
-
     margin: 15px 0 0 18px;
     padding-right: 28px;
 }
@@ -503,6 +501,44 @@ th {
 .btn.btnTrans:hover .text {
     background-image: url("images/icon-arrow-green.png");
 }
+
+.btnTrans.white {
+    clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);
+    color: #15141A !important;
+    background: #ffffff;
+}
+.btnTrans.white .text {
+    background: url("images/btn-arrow.png") no-repeat right center;
+}
+.btnTrans.white:hover {
+    background: #8DB528;
+    color: #fff !important;
+}
+.btnTrans.white .text {
+    background: url("images/btn-arrow.png") no-repeat right center;
+}
+.btnTrans.white .text:hover {
+    background: url("images/btn-arrow-white.png") no-repeat right center;
+}
+
+.btnTrans.green {
+    clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);
+    color: #fff !important;
+    background: #8DB528;
+}
+.btnTrans.green:hover {
+    background: #ffffff;
+    color: #15141A !important;
+}
+.btnTrans.green .text {
+    background: url("images/btn-arrow-white.png") no-repeat right center;
+}
+.btnTrans.green .text:hover {
+    background: url("images/btn-arrow.png") no-repeat right center;
+}
+
+
+
 
 .btn.btnGrey, .btn.btnOrange {
     margin-top: 8px;
@@ -792,7 +828,7 @@ a:hover {
 }
 
 .mainNav .logo a {
-    background: url("images/logo.png") no-repeat center;
+    background: url("images/innasol_super_power_logo.png") no-repeat center;
     background-size: 100%;
     display: block;
     height: 59px;
@@ -1250,7 +1286,7 @@ a:hover {
 
 .btn.btnGreen .text {
     background: #8DB528 url('images/icon-arrow-white.png') no-repeat right center;
-    background-color: #273D05;
+    background-color: #8DB528;
     display: block;
     font-size: 18px;
     height: 45px;
@@ -2359,7 +2395,7 @@ a:hover {
 .postStyles img {
     height: auto;
     width: 100%;
-    margin-top: 30%;
+    /*margin-top: 30%;*/
 }
 
 .page-template-training .postStyles img {
@@ -12056,7 +12092,7 @@ table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc,
 table.dataTable thead .sorting {
     cursor: pointer;
-    *cursor: hand;
+    cursor: hand;
 }
 
 table.dataTable thead .sorting {
@@ -13421,4 +13457,358 @@ img.h-100 {
 }
 .em.em-item.em-item-single .em-item-image img {
     border-left: 4px solid #8DB528 !important;
+}
+
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  margin-bottom: 10px;
+  border: none;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion.active, .accordion:hover,
+button:focus {
+  background-color: #ccc;
+  background: #ccc;
+  border: none;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.schema-faq-code .panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+ /* Style the tab */
+ .tab {
+  float: left;
+  border-top: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 100%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tablinks:after {
+  content: '\25BA';
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0 1.5rem 3rem;
+  width: 70%;
+  border: none;
+  height: 100%;
+  background:transparent;
+  max-height: 600px;
+  overflow: scroll;
+  margin-bottom: 4rem;
+}
+
+.card {
+    padding:1.5rem;
+    color: white
+}
+.page-template-partners .card.bgLightGreen {
+    background-color: #8DB528;
+ 
+}
+.panel.bgLightGreen li, .panel.bgGrey li, .panel.bgLightGreen h3, .panel.bgGrey h3 {
+    color: white
+}
+.page-template-partners .card.bgDarkGreen  {
+    background-color: #1a2707;
+}
+.services-title {
+    background-color: #fff;
+    color: #1f1f1f;
+    padding: 15px 20px;
+    margin: 0 0 20px 0 !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.address {
+  margin: 5px 0;
+  color: #000;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+/*Spacing utilties*/
+.pe-1 {
+    padding-right: 0.5rem;
+}
+.pe-2 {
+    padding-right: 1rem;
+}
+.pe-3 {
+    padding-right: 1.5rem;
+}
+.pe-4 {
+    padding-right: 2rem;
+}
+.pe-5 {
+    padding-right: 2.5rem;
+}
+.ps-1 {
+    padding-left: 0.5rem;
+}
+.ps-2 {
+    padding-left: 1rem;
+}
+.ps-3 {
+    padding-left: 1.5rem;
+}
+.ps-4 {
+    padding-left: 2rem;
+}
+.ps-5 {
+    padding-left: 2.5rem;
+}
+.pt-1 {
+    padding-top: 0.5rem;
+}
+.pt-2 {
+    padding-top: 1rem;
+}
+.pt-3 {
+    padding-top: 1.5rem;
+}
+.pt-4 {
+    padding-top: 2rem;
+}
+.pt-5 {
+    padding-top: 2.5rem;
+}
+.pb-1 {
+    padding-bottom: 0.5rem;
+}
+.pb-2 {
+    padding-bottom: 1rem;
+}
+.pb-3 {
+    padding-bottom: 1.5rem;
+}
+.pb-4 {
+    padding-bottom: 2rem;
+}
+.pb-5 {
+    padding-bottom: 2.5rem;
+}
+.px-1 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.px-2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.px-3 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.px-4 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.px-5 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+.py-1 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.py-2 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.py-3 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.py-4 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.py-5 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+.mx-1 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.mx-2 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.mx-3 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+.mx-4 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.mx-5 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+.my-1 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.my-2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.my-3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.my-4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.my-5 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.mt-1 {
+    margin-top: 0.5rem;
+}
+.mt-2 {
+    margin-top: 1rem;
+}
+.mt-3 {
+    margin-top: 1.5rem;
+}
+.mt-4 {
+    margin-top: 2rem;
+}
+.mt-5 {
+    margin-top: 2.5rem;
+}
+.mb-0 {
+    margin-bottom: 0;
+}
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+.mb-2 {
+    margin-bottom: 1rem;
+}
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+.mb-4 {
+    margin-bottom: 2rem;
+}
+.mb-5 {
+    margin-bottom: 2.5rem;
+}
+.ms-1 {
+    margin-left: 0.5rem;
+}
+.ms-2 {
+    margin-left: 1rem;
+}
+.ms-3 {
+    margin-left: 1.5rem;
+}
+.ms-4 {
+    margin-left: 2rem;
+}
+.ms-5 {
+    margin-left: 2.5rem;
+}
+.me-1 {
+    margin-right: 0.5rem;
+}
+.me-2 {
+    margin-right: 1rem;
+}
+.me-3 {
+    margin-right: 1.5rem;
+}
+.me-4 {
+    margin-right: 2rem;
+}
+.me-5 {
+    margin-right: 2.5rem;
+}
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+.text-white {
+    color: white;
+}
+.image-card .text-content {
+    width: 80%;
+    bottom: 8%;
+    margin: auto;
+    left: 10%;
+}
+.image-card .btnTrans.large {
+    clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%) !important;
+    margin-top: 20px !important;
 }

@@ -376,6 +376,7 @@ add_image_size( 'promo', 960, 480, true );
 add_image_size( 'six-four', 600, 400, true ); 
 add_image_size( 'square-ish', 560, 480, true ); 
 add_image_size( 'square', 380, 380, true );
+add_image_size( 'portrait', 670, 741, true );
 
 // function that runs when shortcode is called
 function wpb_formated_date_shortcode($atts) { 

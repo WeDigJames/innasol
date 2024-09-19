@@ -1,5 +1,9 @@
 <?php /* Template Name: Home */ get_header();?>
 
+<style>
+
+</style>
+
 <?php $rows = get_field('slides');
     if( $rows ) : ?>
                 
@@ -29,8 +33,8 @@
 
                             <div id="swiperContent<?php echo $i;?>" class="content <?php if($i == 0) { echo 'show'; } else { echo 'hide'; } ?>">
                                 <?php echo $content ;?>
-                                <a href="<?php echo $link_1 ;?>" class="btn btnTrans"> <span class="text">Learn More</span> </a>
-                                <a href="<?php echo $link_2 ;?>" class="btn btnTrans" style="background: #fd912a;clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);color:#fff!important;"> <span class="text">FREE SURVEY</span> </a>
+                                <a href="<?php echo $link_1 ;?>" class="btn btnTrans white me-3" style=""> <span class="text">Learn More</span> </a>
+                                <a href="<?php echo $link_2 ;?>" class="btn btnTrans green" style=""> <span class="text">FREE SURVEY</span> </a>
                             </div>
 
                     <?php 
@@ -52,8 +56,6 @@
         </div>
     </div>
     
-
-    
 <?php endif; ?>
 
 
@@ -67,13 +69,13 @@
                     <?php the_content(); ?>
                     <?php endwhile; endif; ?>
 
-                    <a href="https://innasol.com/contact-us/" class="btn btnGrey"> <span class="text">Find Out More</span> <span class="shard"></span> </a>
+                    <!--<a href="https://innasol.com/contact-us/" class="btn btnGrey"> <span class="text">Find Out More</span> <span class="shard"></span> </a>-->
                 </div>
                 
             </div>
         </div>
     </div>
-    
+    <?php /* ?>
     <div class="container">
         <div class="table">
             <div class="tableCell first">
@@ -129,6 +131,134 @@
             </div>
         </div>
     </div>
+    <?php */ ?>
+
+<div class="container" style="margin-bottom: 60px;">
+        <div class="table">
+            <div class="tableCell first">
+                <div class="" style="padding: 0 40px;">
+                    <?php //if( have_rows('biomass_group') ): ?>
+                        <?php //while( have_rows('biomass_group') ): the_row(); ?>
+
+                            <div class="grid-wrapper grid-two-cols mb-40">
+
+                                <?php if( have_rows('image_card_left') ): ?>
+                                    <?php while( have_rows('image_card_left') ): the_row(); 
+
+                                    $text = get_sub_field('text');
+                                    //$orange_button = get_sub_field('orange_button');
+                                    $white_button = get_sub_field('white_button');
+                                    $green_button = get_sub_field('green_button');
+                                    ?>
+
+                                    <div class="forty d-flex flex-column h-100">
+                                        <div class="position-relative image-card">
+                                            <?php if( get_sub_field('background_image') ): 
+                                                    $image = get_sub_field('background_image');
+                                                        // ACF IMAGE (ID) - MAKE SURE FIELD IS SET TO 'Image ID'
+                                                        $image_size = 'full';
+                                                        $image_src = wp_get_attachment_image_src( $image, $image_size );
+                                                        $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
+                                                        $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
+                                                        $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true);
+                                                        //$image_caption = get_the_excerpt( $image );
+                                                ?>
+                                                    <img class="w-100" 
+                                                        src="<?php echo esc_url( $image_src[0] ); ?>"
+                                                        srcset="<?php echo esc_attr( $image_srcset ); ?>"
+                                                        sizes="<?php echo esc_attr( $image_srcset_sizes ); ?>" 
+                                                        alt="<?php echo $image_alt ?>"
+                                                    />
+                                            <?php endif; ?>
+                                            <div class="position-absolute text-content">
+                                                <p class="my-0 text-white"><?php echo $text;?></p> 
+                                                
+                                                <?php if( $green_button ): 
+                                                    $link_url = $green_button['url'];
+                                                    $link_title = $green_button['title'];
+                                                    $link_target = $green_button['target'] ? $green_button['target'] : '_self';
+                                                    ?>
+                                                    <a class="btn btnTrans green" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="text"><?php echo esc_html( $link_title ); ?></span> <span class="shard"></span> </a>
+                                                    <?php endif; ?>
+                                                <?php if( $white_button ): 
+                                                    $link_url = $white_button['url'];
+                                                    $link_title = $white_button['title'];
+                                                    $link_target = $white_button['target'] ? $white_button['target'] : '_self';
+                                                    ?>
+                                                    <a class="btn btnTrans white large" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="text"><?php echo esc_html( $link_title ); ?></span> <span class="shard"></span> </a>
+                                                <?php endif; ?>
+                                            </div>
+                                            
+                                        </div>  
+                                        
+                                    </div><!-- end .forty -->
+
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+
+                                <?php if( have_rows('image_card_right') ): ?>
+                                    <?php while( have_rows('image_card_right') ): the_row(); 
+
+                                    $text = get_sub_field('text');
+                                    $orange_button = get_sub_field('orange_button');
+                                    $white_button = get_sub_field('white_button');
+                                    //$green_button = get_sub_field('green_button');
+                                    ?>
+
+                                    <div class="forty d-flex flex-column h-100">
+                                        <div class="position-relative image-card">
+                                            <?php if( get_sub_field('background_image') ): 
+                                                    $image = get_sub_field('background_image');
+                                                        // ACF IMAGE (ID) - MAKE SURE FIELD IS SET TO 'Image ID'
+                                                        $image_size = 'full';
+                                                        $image_src = wp_get_attachment_image_src( $image, $image_size );
+                                                        $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
+                                                        $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
+                                                        $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true);
+                                                        //$image_caption = get_the_excerpt( $image );
+                                                ?>
+                                                    <img class="w-100" 
+                                                        src="<?php echo esc_url( $image_src[0] ); ?>"
+                                                        srcset="<?php echo esc_attr( $image_srcset ); ?>"
+                                                        sizes="<?php echo esc_attr( $image_srcset_sizes ); ?>" 
+                                                        alt="<?php echo $image_alt ?>"
+                                                    />
+                                            <?php endif; ?>
+                                            <div class="position-absolute text-content">
+                                                <p class="my-0 text-white"><?php echo $text;?></p> 
+                                                
+                                                <?php if( $orange_button ): 
+                                                    $link_url = $orange_button['url'];
+                                                    $link_title = $orange_button['title'];
+                                                    $link_target = $orange_button['target'] ? $orange_button['target'] : '_self';
+                                                    ?>
+                                                    <a class="btn btnTrans green" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="text"><?php echo esc_html( $link_title ); ?></span> <span class="shard"></span> </a>
+                                                    <?php endif; ?>
+                                                <?php if( $white_button ): 
+                                                    $link_url = $white_button['url'];
+                                                    $link_title = $white_button['title'];
+                                                    $link_target = $white_button['target'] ? $white_button['target'] : '_self';
+                                                    ?>
+                                                    <a class="btn btnTrans white large" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="text"><?php echo esc_html( $link_title ); ?></span> <span class="shard"></span> </a>
+                                                <?php endif; ?>
+                                            </div>
+                                            
+                                        </div>  
+                                        
+                                    </div><!-- end .forty -->
+
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+
+                            </div><!-- end .grid-wrapper -->
+
+                        <?php //endwhile; ?>
+                    <?php //endif; ?>
+                </div>
+            </div>
+        </div>
+    </div><!-- end .container -->
+
     <div class="square square-left"></div>
     <div class="square square-right"></div>
 
