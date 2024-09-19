@@ -17,22 +17,11 @@
         <div class="container">
             <div class="postContent">
                 <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<div class="breadcrumbs">','</div>' ); }?>
-                <div class="single-post postStyles">
-                    <div class="single-post-content">
+                
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                        <p class="date" style="font-size: 14px;line-height: 18px;"><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo do_shortcode('[wpv-post-date format="F j, Y" type="modified"]'); ?> <i class="fa fa-tags" aria-hidden="true" style="margin-left:1rem"></i> <?php echo do_shortcode('[wpv-post-taxonomy type="label" format="name"]'); ?></p>
                         <?php the_content(); ?>
                         <?php endwhile; endif; ?>
-                    </div>
-
-                </div>
-
-                <div class="pageSidebar">
-                    <div class="form">
-                        <?php echo do_shortcode( '[contact-form-7 id="7525" title="Contact Us - Posts"]' ); ?>
-                    </div>
-                </div>
-
+               
             </div>
         </div>
         <div class="square square-top-left"></div>

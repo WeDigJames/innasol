@@ -28,6 +28,7 @@
                 </div>
                 <?php };?>
             </div>
+
             <?php if(is_page(8673)){;?>
             <div class="pageContent pageContentRight postStyles">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -35,14 +36,48 @@
             <?php endwhile; endif; ?>
             </div>
             <?php } else {;?>
+
             <div class="pageContent pageContentRight postStyles">
                 <h3>Call Us</h3>
                 <h4>General Enquiries</h4>
-                <p><span class="phone">01621 892613</span></p> <a href="<?php echo site_url();?>/become-a-certified-partner/" class="promo"><img src="<?php echo get_template_directory_uri();?>/images/promo_small_certified_partners.jpg" height="200" width="480" title="Certified Partner Programme" alt="Certified Partner Programme" data-mask="contactUsPromo" class="promoMask" />
-                    <h3>Certified Partners</h3>
-                    <div class="btnText btnTextGreen">Become a partner</div>
-                </a>
-            </div>
+                <p><span class="phone"><a href="tel:01621 892613" style="color:#000">01621 892613</a></span></p>
+
+                <?php if( have_rows('promo') ): ?>
+                    <?php while( have_rows('promo') ): the_row(); 
+                        $image = get_sub_field('image');
+                            $image_size = 'promo';
+                            $image_src = wp_get_attachment_image_src( $image, $image_size );
+                            $image_srcset = wp_get_attachment_image_srcset( $image, $image_size );
+                            $image_srcset_sizes = wp_get_attachment_image_sizes( $image, $image_size );
+                            $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true);
+                        $title = get_sub_field('title');
+                        ?>
+                        <?php 
+                            $link = get_sub_field('link');
+                            //if( $link ): 
+                                $link_url = $link['url'];
+                                $link_title = $link['title'];
+                                $link_target = $link['target'] ? $link['target'] : '_self';
+                                ?>
+                                <?php //endif; ?>
+
+                                <div class="promo">
+                                    <a class="" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">  
+                                        <img data-mask="whoWeArePromo" 
+                                        height="240" width="480" 
+                                        class="promoMask" 
+                                            src="<?php echo esc_url( $image_src[0] ); ?>"
+                                            srcset="<?php echo esc_attr( $image_srcset ); ?>"
+                                            sizes="<?php echo esc_attr( $image_srcset_sizes ); ?>" 
+                                            alt="<?php echo $image_alt ?>"
+                                        />
+                                        <h4><?php echo $title ?></h4>
+                                        <div class="btnText btnTextGreen"><?php echo esc_html( $link_title ); ?></div>
+                                    </a>
+                                </div><!--.promo-->
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                </div>
             <?php };?>
         </div>
         <div class="square square-top-left"></div>

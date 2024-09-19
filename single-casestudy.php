@@ -20,7 +20,7 @@
                 <div class="single-post postStyles">
                     <div class="single-post-content">
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                        <p class="date" style="font-size: 14px;line-height: 18px;"><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo do_shortcode('[wpv-post-date format="F j, Y" type="modified"]'); ?> <i class="fa fa-tags" aria-hidden="true" style="margin-left:1rem"></i> <?php echo do_shortcode('[wpv-post-taxonomy type="label" format="name"]'); ?></p>
+                        <p class="date" style="font-size: 14px;line-height: 18px;"><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo do_shortcode('[wpv-post-date format="F j, Y" type="modified"]'); ?> <i class="fa fa-tags" aria-hidden="true" style="margin-left:1rem"></i> <?php echo do_shortcode('[wpv-post-taxonomy type="project-type" format="name"]'); ?></p>
                         <?php the_content(); ?>
                         <?php endwhile; endif; ?>
                     </div>

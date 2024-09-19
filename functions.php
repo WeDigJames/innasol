@@ -377,77 +377,25 @@ add_image_size( 'six-four', 600, 400, true );
 add_image_size( 'square-ish', 560, 480, true ); 
 add_image_size( 'square', 380, 380, true );
 
-/*
-function filter_posts() {
-    $catSlug = $_POST['category'];
+// function that runs when shortcode is called
+function wpb_formated_date_shortcode($atts) { 
   
-    $ajaxposts = new WP_Query([
-      'post_type' => 'blogs',
-      'posts_per_page' => 20,
-      'category_name' => $catSlug,
-      'orderby' => 'date', 
-      'order' => 'desc',
-    ]);
-    $response = '';
-  
-    if($ajaxposts->have_posts()) {
-      while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-        $response .= get_template_part('partials/post-content');
-      endwhile;
-    } else {
-      $response = 'empty';
-    }
-  
-    echo $response;
-    exit;
-  }
-  add_action('wp_ajax_filter_posts', 'filter_posts');
-  add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
-*/
-//////
-
-  add_action('wp_ajax_myfilter', 'misha_filter_function'); // wp_ajax_{ACTION HERE} 
-add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');
-
-function misha_filter_function(){
-	$args = array(
-		'orderby' => 'date', // we will sort posts by date
-		'order'	=> $_POST['date'] // ASC or DESC
-	);
- 
-	// for taxonomies / categories
-	if( isset( $_POST['categoryfilter'] ) )
-		$args['tax_query'] = array(
-			array(
-				'taxonomy' => 'category',
-				'field' => 'id',
-				'terms' => $_POST['categoryfilter']
-			)
-		);
-
-	// if you want to use multiple checkboxed, just duplicate the above 5 lines for each checkbox
- 
-	$query = new WP_Query([
-        'post_type' => 'blogs',
-        'posts_per_page' => 20,
-        'category_name' => $catSlug,
-        'orderby' => 'date', 
-        'order' => 'desc',
-      ]);
-	
-	if( $query->have_posts() ) :
-		while( $query->have_posts() ): $query->the_post();
-			echo '<h2>' . $query->post->post_title . '</h2>';
-		endwhile;
-		wp_reset_postdata();
-	else :
-		echo 'No posts found';
-	endif;
-	
-	die();
+// Things that you want to do.
+//$message = get_the_id(); 
+$message = date('d F, Y', strtotime($atts['date']));
+// Output needs to be return
+return $message;
 }
+// register shortcode
+add_shortcode('formated_date', 'wpb_formated_date_shortcode');
 
-
-////
-
-
+function wpb_formated_time_shortcode($atts) { 
+  
+// Things that you want to do.
+//$message = get_the_id(); 
+$message = date('H:i', strtotime($atts['time']));
+// Output needs to be return
+return $message;
+}
+// register shortcode
+add_shortcode('formated_time', 'wpb_formated_time_shortcode');

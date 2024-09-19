@@ -38,19 +38,21 @@
 }
 
 @media all and (min-width:1169px) and (max-width:1289px) {
+    /*
     #menu-main-menu > li:last-child {
         margin-left: 63px;
     }
+    */
     .mainNav ul li {
         font-size: 14px;
     }
 }
 @media all and (max-width:1025px) {
-
+    /*
     #menu-main-menu > li:last-child {
         margin-left: 45px;
     }
- 
+    */
     .btn.btnGreen .text {
         font-size: 11px;
         padding: 15px 22px 14px 20px;
